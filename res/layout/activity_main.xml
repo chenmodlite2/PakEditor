@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PakEditor"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="-0.01" />
+
+                <TextView
+                    android:id="@+id/tvHeaderSub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="UE pak / IoStore workbench"
+                    android:textColor="@color/textSecondary"
+                    android:textSize="13sp"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/btnAbout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GPL-3.0"
+                android:textColor="@color/textTertiary"
+                android:textSize="12sp"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="8dp" />
+        </LinearLayout>
+
+        <!-- Status -->
+        <LinearLayout
+            android:id="@+id/statusCard"
+            style="@style/Card"
+            android:orientation="vertical">
+
+            <TextView style="@style/Label.Small" android:text="Status" />
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ready. Pick a game directory to begin."
+                android:textColor="@color/textPrimary"
+                android:textSize="14sp"
+                android:layout_marginTop="6dp"
+                android:lineSpacingExtra="3dp" />
+        </LinearLayout>
+
+        <!-- Archives card -->
+        <LinearLayout
+            android:id="@+id/cardArchives"
+            style="@style/Card"
+            android:orientation="vertical"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Archives"
+                android:textColor="@color/textPrimary"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvArchivesSub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Browse, extract, replace and export files from .pak and .utoc/.ucas containers."
+                android:textColor="@color/textSecondary"
+                android:textSize="13sp"
+                android:layout_marginTop="4dp"
+                android:lineSpacingExtra="3dp" />
+
+            <Button
+                android:id="@+id/btnOpenArchives"
+                style="@style/Btn.Primary"
+                android:text="Open archives"
+                android:layout_marginTop="12dp" />
+        </LinearLayout>
+
+        <!-- Cooking card -->
+        <LinearLayout
+            android:id="@+id/cardCook"
+            style="@style/Card"
+            android:orientation="vertical"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cooking"
+                android:textColor="@color/textPrimary"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCookSub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pack edited assets into a loadable mod (.pak, and .utoc/.ucas for IoStore games)."
+                android:textColor="@color/textSecondary"
+                android:textSize="13sp"
+                android:layout_marginTop="4dp"
+                android:lineSpacingExtra="3dp" />
+
+            <Button
+                android:id="@+id/btnOpenCook"
+                style="@style/Btn.Ghost"
+                android:text="Open cooking"
+                android:layout_marginTop="12dp" />
+        </LinearLayout>
+
+        <!-- Settings card -->
+        <LinearLayout
+            android:id="@+id/cardSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="14dp"
+            android:layout_marginBottom="10dp">
+
+            <TextView style="@style/Label.Small" android:text="Settings" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Game directory (folder with .pak files)"
+                android:textColor="@color/textPrimary"
+                android:textSize="13sp"
+                android:layout_marginTop="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/etGameDir"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_input"
+                    android:hint="/storage/emulated/0/..."
+                    android:textColorHint="@color/textTertiary"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="13sp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:singleLine="true"
+                    android:inputType="text"
+                    android:imeOptions="actionDone" />
+
+                <TextView
+                    android:id="@+id/btnPickDir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:gravity="center"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="6dp"
+                    android:text="Browse"
+                    android:textColor="@color/accent"
+                    android:textSize="13sp"
+                    android:background="?android:attr/selectableItemBackground" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AES key (64 hex chars)"
+                android:textColor="@color/textPrimary"
+                android:textSize="13sp"
+                android:layout_marginTop="12dp" />
+
+            <EditText
+                android:id="@+id/etAesKey"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input"
+                android:hint="0000000000000000000000000000000000000000000000000000000000000000"
+                android:textColorHint="@color/textTertiary"
+                android:textColor="@color/textPrimary"
+                android:textSize="13sp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:singleLine="true"
+                android:inputType="textNoSuggestions"
+                android:fontFamily="monospace"
+                android:imeOptions="actionDone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Engine version"
+                android:textColor="@color/textPrimary"
+                android:textSize="13sp"
+                android:layout_marginTop="12dp" />
+
+            <Spinner
+                android:id="@+id/spinnerEngine"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Output / extraction folder"
+                android:textColor="@color/textPrimary"
+                android:textSize="13sp"
+                android:layout_marginTop="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="6dp"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/etOutDir"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_input"
+                    android:hint="/storage/emulated/0/PakEditor"
+                    android:textColorHint="@color/textTertiary"
+                    android:textColor="@color/textPrimary"
+                    android:textSize="13sp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:singleLine="true"
+                    android:inputType="text"
+                    android:imeOptions="actionDone" />
+
+                <TextView
+                    android:id="@+id/btnPickOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:gravity="center"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="6dp"
+                    android:text="Browse"
+                    android:textColor="@color/accent"
+                    android:textSize="13sp"
+                    android:background="?android:attr/selectableItemBackground" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSaveSettings"
+                style="@style/Btn.Ghost"
+                android:text="Save settings"
+                android:layout_marginTop="14dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvFooter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PakEditor-FM port · FModel (GPL-3.0) · CUE4Parse (Apache-2.0) · UAssetAPI (MIT) · retoc (MIT)"
+            android:textColor="@color/textTertiary"
+            android:textSize="11sp"
+            android:lineSpacingExtra="3dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="20dp" />
+    </LinearLayout>
+</ScrollView>
